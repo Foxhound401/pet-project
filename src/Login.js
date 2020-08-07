@@ -61,6 +61,12 @@ const useStyles = makeStyles(theme => ({
     backgroundSize: "cover",
     backgroundPosition: "center"
   },
+  notPaper: {
+    margin: theme.spacing(8, 4),
+    display: "flex",
+    alignItems: "center",
+    flex: 1
+  },
   paper: {
     margin: theme.spacing(8, 4),
     display: "flex",
@@ -82,12 +88,13 @@ const useStyles = makeStyles(theme => ({
   },
   submit: {
     margin: theme.spacing(3, 0, 2),
-    borderRadius: 15
+    borderRadius: 15,
+    backgroundColor: "#1877F2",
+    textTransform: "none"
   },
   notMobile: {
-    // display: "flex",
-    // flexDirection: "column",
-    // flex: 1,
+    display: "flex",
+    flex: 1
   },
   mobile: {
     display: "flex",
@@ -109,29 +116,26 @@ const useStyles = makeStyles(theme => ({
   textNotMobile: {}
 }));
 
-export default function SignInSide() {
+export default function Login() {
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.up("sm"));
-  console.log(matches);
   const classes = useStyles();
 
   return (
     <Grid container component="main" className={classes.root}>
       <CssBaseline />
-      <Grid item xs={false} sm={4} md={7} className={classes.image} />
-      <Grid
-        item
-        xs={12}
-        sm={8}
-        md={5}
-        component={Paper}
-        elevation={6}
-        square
-        className={matches ? classes.notMobile : classes.mobile}
-      >
-        <div className={classes.paper}>
+      <Grid item xs={false} sm={4} md={7} className={classes.image}>
+        {matches ? (
           <Grid className={classes.logo}>
-            <Grid container alignItems="center" style={{ height: "fit-content" }}>
+            <Grid
+              container
+              alignItems="center"
+              style={{
+                height: "fit-content",
+                marginTop: "75px",
+                marginLeft: "60px"
+              }}
+            >
               <Avatar className={classes.avatar} src={sunset} alt="Sunset">
                 <LockOutlinedIcon />
               </Avatar>
@@ -163,6 +167,62 @@ export default function SignInSide() {
               </Grid>
             </Grid>
           </Grid>
+        ) : (
+          ""
+        )}
+      </Grid>
+      <Grid
+        item
+        xs={12}
+        sm={8}
+        md={5}
+        component={Paper}
+        elevation={6}
+        square
+        className={matches ? classes.notMobile : classes.mobile}
+      >
+        <div className={matches ? classes.notPaper : classes.paper}>
+          {!matches ? (
+            <Grid className={classes.logo}>
+              <Grid
+                container
+                alignItems="center"
+                style={{ height: "fit-content" }}
+              >
+                <Avatar className={classes.avatar} src={sunset} alt="Sunset">
+                  <LockOutlinedIcon />
+                </Avatar>
+                <Grid>
+                  <Typography
+                    component="h1"
+                    variant="h5"
+                    style={{
+                      color: "white",
+                      fontWeight: "bold",
+                      fontSize: "1.3rem",
+                      lineHeight: 1
+                    }}
+                  >
+                    PET AUCTION
+                  </Typography>
+                  <Typography
+                    component="h1"
+                    variant="overline"
+                    style={{
+                      color: "white",
+                      fontSize: "0.85rem",
+                      letterSpacing: "0.4em",
+                      lineHeight: 1
+                    }}
+                  >
+                    loremipsum
+                  </Typography>
+                </Grid>
+              </Grid>
+            </Grid>
+          ) : (
+            ""
+          )}
           <form className={classes.form} noValidate>
             <Button
               type="submit"
