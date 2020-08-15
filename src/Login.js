@@ -113,7 +113,9 @@ const useStyles = makeStyles(theme => ({
   textMobile: {
     color: "#F2F2F2"
   },
-  textNotMobile: {}
+  textNotMobile: {
+    paddingTop: "10px"
+  }
 }));
 
 export default function Login() {
@@ -124,7 +126,7 @@ export default function Login() {
   return (
     <Grid container component="main" className={classes.root}>
       <CssBaseline />
-      <Grid item xs={false} sm={4} md={7} className={classes.image}>
+      <Grid item xs={false} sm={5} md={7} lg={8} className={classes.image}>
         {matches ? (
           <Grid className={classes.logo}>
             <Grid
@@ -249,7 +251,11 @@ export default function Login() {
                 </Typography>
               </Grid>
             </Grid>
-            <Box mt={2}>{matches ? <Copyright /> : <CopyrightMobile />}</Box>
+            {!matches ? (
+              <Box mt={2}>{matches ? <Copyright /> : <CopyrightMobile />}</Box>
+            ) : (
+              ""
+            )}
           </form>
         </div>
       </Grid>
