@@ -287,7 +287,7 @@ export default function HomePage() {
                       }}
                     >
                       <Typography
-                        style={{ color: "#FFFFFF", fontSize: "0.8rem" }}
+                        style={{ color: "#FFFFFF", fontSize: "0.9rem" }}
                       >
                         Đăng sản phẩm
                       </Typography>
