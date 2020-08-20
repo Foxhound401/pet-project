@@ -489,7 +489,6 @@ export default function ProductDetail() {
                     <Typography
                       style={{
                         color: "#333333",
-                        color: "#333333",
                         fontSize: "1.125rem",
                         letterSpacing: "0.02em"
                       }}
