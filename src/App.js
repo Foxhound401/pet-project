@@ -3,6 +3,7 @@ import HomePage from "./HomePage";
 import Login from "./Login";
 import Otp from "./Otp";
 import ProductDetail from "./ProductDetail";
+import UserProfile from "./UserProfile";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
           <Route path="/login" component={Login} />
           <Route path="/otp" component={Otp} />
           <Route path="/pets" component={ProductDetail} />
+          <Route path="/users" component={UserProfile} />
           <Route path="/" component={HomePage} />
         </Switch>
       </div>
