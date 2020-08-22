@@ -56,6 +56,18 @@ const useStyles = makeStyles(theme => ({
     backgroundPosition: "center",
     borderRadius: 10
   },
+  cardweb: {
+    width: "100%",
+    display: "flex",
+    flex: 1,
+    flexDirection: "column",
+    alignItems: "flex-end",
+    minHeight: "11.5rem",
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    borderRadius: 10
+  },
   bar: {
     color: "#000000",
     backgroundColor: "#ffffff",
@@ -198,7 +210,7 @@ const useStyles = makeStyles(theme => ({
   shadowItem: {
     height: "100%",
     display: "flex",
-    flexDirection: "column",
+    // flexDirection: "column",
     flex: 1,
     borderRadius: 10
   },
