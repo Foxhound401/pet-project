@@ -11,23 +11,18 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import { useTheme } from "@material-ui/core/styles";
-import useMediaQuery from "@material-ui/core/useMediaQuery";
+// import useMediaQuery from "@material-ui/core/useMediaQuery";
 import Avatar from "@material-ui/core/Avatar";
-import { CardMedia } from "@material-ui/core";
-import rick from "./images/rick.png";
 import morty from "./images/morty.png";
-import beth from "./images/beth.jpeg";
-import bug from "./images/bug.png";
 import kangaroo from "./images/kangaroo.jpg";
 import tiger from "./images/tiger.jpg";
 import crocodile from "./images/crocodile.jpg";
-import turtle from "./images/turtle.jpg";
-import ohhwee from "./images/ohhwee.jpg";
 import bear from "./images/bear.jpg";
 import Carousel from "react-material-ui-carousel";
 import Button from "@material-ui/core/Button";
 import Box from "@material-ui/core/Box";
 import GradeTwoToneIcon from "@material-ui/icons/GradeTwoTone";
+import Divider from "@material-ui/core/Divider";
 
 function PetImage(props) {
   return (
@@ -143,7 +138,7 @@ const useStyles = makeStyles(theme => ({
 export default function ProductDetail() {
   const classes = useStyles();
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.up("sm"));
+  // const isMobile = useMediaQuery(theme.breakpoints.up("sm"));
 
   const items = [
     {
@@ -190,6 +185,7 @@ export default function ProductDetail() {
           </Grid>
         </Toolbar>
       </AppBar>
+      <Divider variant="middle" />
       <main>
         <Container className={classes.cardGrid} maxWidth="md">
           {/* End hero unit */}

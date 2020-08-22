@@ -30,6 +30,7 @@ import Box from "@material-ui/core/Box";
 import GradeTwoToneIcon from "@material-ui/icons/GradeTwoTone";
 import heroUser from "./images/heroUser.png";
 import TelegramIcon from "@material-ui/icons/Telegram";
+import Divider from "@material-ui/core/Divider";
 
 function PetImage(props) {
   return (
@@ -226,8 +227,7 @@ const useStyles = makeStyles(theme => ({
     fontSize: "0.75rem",
     lineHeight: "158.69%"
   },
-  itemPet: {
-  }
+  itemPet: {}
 }));
 
 const test1 = {
@@ -294,6 +294,7 @@ export default function UserProfile() {
           </Grid>
         </Toolbar>
       </AppBar>
+      <Divider variant="middle" />
       <main>
         <Container className={classes.cardImage} maxWidth="md">
           <Grid className={classes.wrapAvatar}>
@@ -328,7 +329,7 @@ export default function UserProfile() {
             </CardActionArea>
           </Grid>
         </Container>
-        <Container  className={classes.cardGrid}>
+        <Container className={classes.cardGrid}>
           <Typography
             style={{
               borderRadius: 15,

@@ -27,6 +27,7 @@ import crocodile from "./images/crocodile.jpg";
 import turtle from "./images/turtle.jpg";
 import ohhwee from "./images/ohhwee.jpg";
 import bear from "./images/bear.jpg";
+import Divider from "@material-ui/core/Divider";
 
 function Copyright() {
   return (
@@ -40,6 +41,56 @@ function Copyright() {
     </Typography>
   );
 }
+
+const test1 = {
+  name: "Rùa Tai đỏ",
+  timeleft: "23:02:43",
+  avatar: rick,
+  heroImage: turtle
+};
+
+const test2 = {
+  name: "Hổ rừng xanh",
+  timeleft: "23:02:43",
+  avatar: bug,
+  heroImage: tiger
+};
+
+const test3 = {
+  name: "Chuột túi bắc cực",
+  timeleft: "23:02:43",
+  avatar: beth,
+  heroImage: kangaroo
+};
+
+const test4 = {
+  name: "Cá sấu lên bờ",
+  timeleft: "23:02:43",
+  avatar: morty,
+  heroImage: crocodile
+};
+
+const test5 = {
+  name: "Putin oooooasdfasdfasdfasdfasdfadfad",
+  timeleft: "23:02:43",
+  avatar: ohhwee,
+  heroImage: bear
+};
+
+const cards = [
+  test1,
+  test2,
+  test3,
+  test4,
+  test5,
+  test2,
+  test3,
+  test4,
+  test1,
+  test2,
+  test3,
+  test5
+];
 
 const useStyles = makeStyles(theme => ({
   icon: {
@@ -166,58 +217,33 @@ const useStyles = makeStyles(theme => ({
     width: "100%",
     overflow: "hidden",
     textOverflow: "ellipsis"
+  },
+  topAvatar: {
+    display: "flex",
+    flex: 1,
+    borderRadius: "10%",
+    background:
+      "linear-gradient(180deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.45) 27%, rgba(0,0,0,0) 80%)"
+  },
+  infoItem: {
+    display: "flex",
+    flex: 1,
+    flexDirection: "column",
+    // alignItems: "center",
+    justifyContent: "flex-end",
+    borderRadius: "10%",
+    background:
+      "linear-gradient(0deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.45) 27%, rgba(0,0,0,0) 80%)",
+    padding: "1rem",
+    paddingBottom: 10
+  },
+  userAvatar: {
+    borderWidth: "2px",
+    borderStyle: "solid",
+    borderColor: "rgba(255, 255, 255, 0.36)",
+    margin: "1rem"
   }
 }));
-
-const test1 = {
-  name: "Rùa Tai đỏ",
-  timeleft: "23:02:43",
-  avatar: rick,
-  heroImage: turtle
-};
-
-const test2 = {
-  name: "Hổ rừng xanh",
-  timeleft: "23:02:43",
-  avatar: bug,
-  heroImage: tiger
-};
-
-const test3 = {
-  name: "Chuột túi bắc cực",
-  timeleft: "23:02:43",
-  avatar: beth,
-  heroImage: kangaroo
-};
-
-const test4 = {
-  name: "Cá sấu lên bờ",
-  timeleft: "23:02:43",
-  avatar: morty,
-  heroImage: crocodile
-};
-
-const test5 = {
-  name: "Putin oooooasdfasdfasdfasdfasdfadfad",
-  timeleft: "23:02:43",
-  avatar: ohhwee,
-  heroImage: bear
-};
-
-const cards = [
-  test1,
-  test2,
-  test3,
-  test4,
-  test5,
-  test2,
-  test3,
-  test4,
-  test1,
-  test2,
-  test3,
-  test5
-];
 
 export default function HomePage() {
   const classes = useStyles();
@@ -251,6 +277,7 @@ export default function HomePage() {
           </Grid>
         </Toolbar>
       </AppBar>
+      <Divider variant="middle" />
       <main>
         <Container className={classes.cardGrid} maxWidth="md">
           {/* End hero unit */}
@@ -318,40 +345,14 @@ export default function HomePage() {
                     }}
                   >
                     <CardContent className={classes.cardContent}>
-                      <Grid
-                        style={{
-                          display: "flex",
-                          flex: 1,
-                          borderRadius: "10%",
-                          background:
-                            "linear-gradient(180deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.45) 27%, rgba(0,0,0,0) 80%)"
-                        }}
-                      >
+                      <Grid className={classes.topAvatar}>
                         <Avatar
                           alt="Remy Sharp"
                           src={card.avatar}
-                          style={{
-                            borderWidth: "2px",
-                            borderStyle: "solid",
-                            borderColor: "rgba(255, 255, 255, 0.36)",
-                            margin: "1rem"
-                          }}
+                          className={classes.userAvatar}
                         />
                       </Grid>
-                      <Grid
-                        style={{
-                          display: "flex",
-                          flex: 1,
-                          flexDirection: "column",
-                          // alignItems: "center",
-                          justifyContent: "flex-end",
-                          borderRadius: "10%",
-                          background:
-                          "linear-gradient(0deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.45) 27%, rgba(0,0,0,0) 80%)",
-                          padding: "1rem",
-                          paddingBottom: 10,
-                        }}
-                      >
+                      <Grid className={classes.infoItem}>
                         <Typography className={classes.petTimeLeft}>
                           {card.timeleft}
                         </Typography>
