@@ -13,7 +13,7 @@ export const NormalTextField = styled(TextField)`
     lint-height: 158.69%;
     color: #333333;
   }
-  .PrivateNotchedOutline-root-20 {
+  .MuiOutlinedInput-notchedOutline {
     border: 0;
   }
 `;
@@ -30,7 +30,7 @@ export const AreaTextField = styled(TextField)`
     line-height: 158.69%;
     color: #333333;
   }
-  .PrivateNotchedOutline-root-20 {
+  .MuiOutlinedInput-notchedOutline {
     border: 0;
   }
 `;
@@ -47,7 +47,7 @@ export const SelectTextField = styled(TextField)`
     lint-height: 158.69%;
     color: #333333;
   }
-  .PrivateNotchedOutline-root-20 {
+  .MuiOutlinedInput-notchedOutline {
     border: 0;
   }
 `;

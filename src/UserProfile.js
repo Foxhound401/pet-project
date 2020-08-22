@@ -22,31 +22,11 @@ import kangaroo from "./images/kangaroo.jpg";
 import tiger from "./images/tiger.jpg";
 import crocodile from "./images/crocodile.jpg";
 import turtle from "./images/turtle.jpg";
-import ohhwee from "./images/ohhwee.jpg";
-import bear from "./images/bear.jpg";
-import Carousel from "react-material-ui-carousel";
 import Button from "@material-ui/core/Button";
 import Box from "@material-ui/core/Box";
-import GradeTwoToneIcon from "@material-ui/icons/GradeTwoTone";
 import heroUser from "./images/heroUser.png";
 import TelegramIcon from "@material-ui/icons/Telegram";
 import Divider from "@material-ui/core/Divider";
-
-function PetImage(props) {
-  return (
-    <Grid style={{ display: "flex", flex: 1, minHeight: "15rem" }}>
-      <CardActionArea
-        style={{
-          backgroundImage: `url(${props.item.image})`,
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          borderRadius: 15
-        }}
-      ></CardActionArea>
-    </Grid>
-  );
-}
 
 const useStyles = makeStyles(theme => ({
   icon: {
@@ -264,7 +244,7 @@ export default function UserProfile() {
   const classes = useStyles();
   const theme = useTheme();
   const notMobile = useMediaQuery(theme.breakpoints.up("sm"));
-  const spacing = notMobile ? 3 : 1;
+  // const spacing = notMobile ? 3 : 1;
   const xsItem = notMobile ? 4 : 4;
   const smItem = notMobile ? 3 : 6;
   const mdItem = notMobile ? 3 : 6;

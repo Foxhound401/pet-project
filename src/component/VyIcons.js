@@ -8,7 +8,7 @@ import vycalendaricon from "../images/VyCalendarIcon.svg";
 export function VyMenuIcon(props) {
   return (
     <Icon {...props}>
-      <img src={vymenuicon} />
+      <img alt="MenuIcon" src={vymenuicon} />
     </Icon>
   );
 }
@@ -16,7 +16,7 @@ export function VyMenuIcon(props) {
 export function VyBellIcon(props) {
   return (
     <Icon {...props}>
-      <img src={vybellicon} />
+      <img alt="BellIcon" src={vybellicon} />
     </Icon>
   );
 }
@@ -24,7 +24,7 @@ export function VyBellIcon(props) {
 export function VyBellNoti(props) {
   return (
     <Icon {...props}>
-      <img src={vybellnoti} />
+      <img alt="BellNoti" src={vybellnoti} />
     </Icon>
   );
 }
@@ -32,7 +32,7 @@ export function VyBellNoti(props) {
 export function VyCalendarIcon(props) {
   return (
     <Icon {...props}>
-      <img src={vycalendaricon} />
+      <img alt="CalendarIcon" src={vycalendaricon} />
     </Icon>
   );
 }

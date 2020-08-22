@@ -7,8 +7,8 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
-import { useTheme } from "@material-ui/core/styles";
-import useMediaQuery from "@material-ui/core/useMediaQuery";
+// import { useTheme } from "@material-ui/core/styles";
+// import useMediaQuery from "@material-ui/core/useMediaQuery";
 import Divider from "@material-ui/core/Divider";
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
@@ -221,14 +221,14 @@ const materialTheme = createMuiTheme({
 
 export default function NewProduct() {
   const classes = useStyles();
-  const theme = useTheme();
-  const notMobile = useMediaQuery(theme.breakpoints.up("sm"));
-  const spacing = notMobile ? 3 : 1;
-  const xsItem = notMobile ? 4 : 4;
-  const smItem = notMobile ? 3 : 6;
-  const mdItem = notMobile ? 3 : 6;
-  const itemMaxWidth = notMobile ? "none" : classes.itemPet;
-  const cardLayout = notMobile ? classes.cardweb : classes.card;
+  // const theme = useTheme();
+  // const notMobile = useMediaQuery(theme.breakpoints.up("sm"));
+  // const spacing = notMobile ? 3 : 1;
+  // const xsItem = notMobile ? 4 : 4;
+  // const smItem = notMobile ? 3 : 6;
+  // const mdItem = notMobile ? 3 : 6;
+  // const itemMaxWidth = notMobile ? "none" : classes.itemPet;
+  // const cardLayout = notMobile ? classes.cardweb : classes.card;
 
   useEffect(() => {
     document.body.style.backgroundColor = "#FFFFFF";
@@ -357,6 +357,7 @@ export default function NewProduct() {
                     alignItems: "center",
                     backgroundColor: "#F3F3F9"
                   }}
+                  key={pic.label}
                 >
                   <Avatar
                     alt="+"

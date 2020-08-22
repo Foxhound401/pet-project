@@ -10,7 +10,6 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
-import { useTheme } from "@material-ui/core/styles";
 // import useMediaQuery from "@material-ui/core/useMediaQuery";
 import Avatar from "@material-ui/core/Avatar";
 import morty from "./images/morty.png";
@@ -137,7 +136,6 @@ const useStyles = makeStyles(theme => ({
 
 export default function ProductDetail() {
   const classes = useStyles();
-  const theme = useTheme();
   // const isMobile = useMediaQuery(theme.breakpoints.up("sm"));
 
   const items = [
@@ -420,7 +418,7 @@ export default function ProductDetail() {
                   paddingBottom: 15
                 }}
               >
-                {index == 0 ? (
+                {index === 0 ? (
                   <Box
                     style={{
                       display: "flex",
