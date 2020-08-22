@@ -1,14 +1,17 @@
 import React from "react";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import shitImage from "./images/login-background.png";
 import { useTheme } from "@material-ui/core/styles";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
-
+import {
+  NormalTextField,
+  AreaTextField,
+  SelectTextField
+} from "./component/CustomizedTextField";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -77,7 +80,37 @@ const useStyles = makeStyles(theme => ({
   textMobile: {
     color: "#F2F2F2"
   },
-  textNotMobile: {}
+  textNotMobile: {},
+  textBold: {
+    color: "#333333",
+    fontStyle: "normal",
+    lineHeight: "158.69%",
+    fontWeight: "bold",
+    letterSpacing: "0.002em",
+    fontSize: "1rem",
+    textAlign: "center",
+    marginBottom: "1.5rem"
+  },
+  textNormal: {
+    fontSize: "0.8rem",
+    fontWeight: "400",
+    lineHeight: "158.69%",
+    textAlign: "center",
+    letterSpacing: "0.02em",
+    color: "#898AA0"
+  },
+  textTileSpacing: {
+    textTransform: "uppercase",
+    fontWeight: "normal",
+    fontSize: "0.875rem",
+    lineHeight: "158.69%",
+    letterSpacing: "0.05em",
+    color: "#828282"
+  },
+  flex: {
+    display: "flex",
+    flex: 1
+  }
 }));
 
 export default function Otp() {
@@ -88,41 +121,40 @@ export default function Otp() {
   return (
     <Grid container component="main" className={classes.root}>
       <CssBaseline />
-      <Grid
-        item
-        component={Paper}
-        elevation={6}
-        square
-        className={classes.notMobile}
-      >
-        <div className={classes.paper}>
-          <Grid container>
-            <Typography
-              variant="body2"
-              color="textSecondary"
-              align="center"
-              className={matches ? classes.textNotMobile : classes.textMobile}
-            >
-              Bằng cách đăng nhập, tôi xác nhận tôi đồng ý với Điều kiện và Điều
-              khoản của blablabla
-            </Typography>
-          </Grid>
-          <form className={classes.form} noValidate>
-            <Grid>
-              <Grid item xs={12}>
-                <Button
-                  type="submit"
-                  variant="contained"
-                  color="primary"
-                  className={classes.submit}
-                  size="large"
-                >
-                  Đăng nhập bằng Facebook
-                </Button>
-              </Grid>
-            </Grid>
-          </form>
-        </div>
+      <Grid style={{ marginTop: "15rem", padding: "2rem" }}>
+        <Typography className={classes.textBold}>
+          Vui lòng nhập số điện thoại
+        </Typography>
+        <Grid style={{ marginBottom: "1.4rem" }}>
+          <NormalTextField
+            variant="outlined"
+            placeholder="0909xxxxxx"
+            fullWidth={true}
+          />
+        </Grid>
+        <Grid style={{ marginBottom: "4rem" }}>
+          <Typography className={classes.textNormal}>
+            Nhấn tiếp theo để nhận được tin nhắn xác nhậm từ dịch vụ xác thực.
+            Xác thực số điện thoại.
+          </Typography>
+        </Grid>
+        <Grid className={classes.flex}>
+          <Button
+            style={{
+              display: "flex",
+              flex: 1,
+              backgroundColor: "#1877F2",
+              fontSize: "1rem",
+              color: "#FBFBFB",
+              marginTop: 19,
+              borderRadius: 15,
+              textTransform: "none",
+              height: "3.25rem",
+              marginLeft: 30,
+              marginRight: 30
+            }}
+          >Tiếp theo</Button>
+        </Grid>
       </Grid>
     </Grid>
   );

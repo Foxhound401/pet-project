@@ -1,11 +1,11 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import Dialog from "@material-ui/core/Dialog";
 import Typography from "@material-ui/core/Typography";
 import { blue } from "@material-ui/core/colors";
 import Grid from "@material-ui/core/Grid";
+import Divider from "@material-ui/core/Divider";
 
 const useStyles = makeStyles({
   avatar: {
@@ -119,8 +119,64 @@ export function SimpleDialog(props) {
   );
 }
 
-SimpleDialog.propTypes = {
-  onClose: PropTypes.func.isRequired,
-  open: PropTypes.bool.isRequired,
-  selectedValue: PropTypes.string.isRequired
-};
+export function UserDialog(props) {
+  const classes = useStyles();
+  const { onClose, selectedValue, open } = props;
+
+  const handleClose = () => {
+    onClose(selectedValue);
+  };
+
+  return (
+    <Dialog
+      fullWidth={true}
+      maxWidth="sm"
+      onClose={handleClose}
+      aria-labelledby="simple-dialog-title"
+      open={open}
+    >
+      <Grid
+        style={{
+          display: "flex",
+          flex: 1,
+          flexDirection: "column",
+          alignItems: "center",
+          width: "100%"
+        }}
+        container
+      >
+        <Grid style={{ display: "flex", flex: 1, flexDirection: "column" }}>
+          <Typography
+            style={{
+              marginTop: 25,
+              marginBottom: 10,
+              fontSize: "0.9rem",
+              fontWeight: "bold",
+              color: "#333333",
+              lineHeight: "158.69%",
+              alignSelf: "center"
+            }}
+          >
+            Đánh giá uy tín
+          </Typography>
+        </Grid>
+        <Divider variant="middle" />
+        <Grid style={{ display: "flex", flex: 1, flexDirection: "column" }}>
+          <Typography
+            style={{
+              marginTop: 25,
+              marginBottom: 10,
+              fontSize: "0.9rem",
+              fontWeight: "bold",
+              color: "#333333",
+              lineHeight: "158.69%",
+              alignSelf: "center"
+            }}
+          >
+            Báo cào vi phạm
+          </Typography>
+        </Grid>
+      </Grid>
+    </Dialog>
+  );
+}

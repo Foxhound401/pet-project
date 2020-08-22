@@ -27,6 +27,7 @@ import Box from "@material-ui/core/Box";
 import heroUser from "./images/heroUser.png";
 import TelegramIcon from "@material-ui/icons/Telegram";
 import Divider from "@material-ui/core/Divider";
+import { UserDialog } from "./component/CustomizeDialog";
 
 const useStyles = makeStyles(theme => ({
   icon: {
@@ -251,6 +252,18 @@ export default function UserProfile() {
   const itemMaxWidth = notMobile ? "none" : classes.itemPet;
   const cardLayout = notMobile ? classes.cardweb : classes.card;
 
+  const [open, setOpen] = React.useState(false);
+  const [selectedValue, setSelectedValue] = React.useState("true");
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = value => {
+    setOpen(false);
+    setSelectedValue(value);
+  };
+
   return (
     <React.Fragment>
       <CssBaseline />
@@ -304,9 +317,17 @@ export default function UserProfile() {
             >
               Nhắn tin
             </Button>
-            <CardActionArea className={classes.dotButton}>
+            <CardActionArea
+              className={classes.dotButton}
+              onClick={() => handleClickOpen()}
+            >
               <Typography className={classes.dotText}>...</Typography>
             </CardActionArea>
+            <UserDialog
+              selectedValue={selectedValue}
+              open={open}
+              onClose={handleClose}
+            />
           </Grid>
         </Container>
         <Container className={classes.cardGrid}>
