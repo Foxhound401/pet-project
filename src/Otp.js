@@ -7,15 +7,13 @@ import { makeStyles } from "@material-ui/core/styles";
 import shitImage from "./images/login-background.png";
 import { useTheme } from "@material-ui/core/styles";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
-import {
-  NormalTextField,
-  AreaTextField,
-  SelectTextField
-} from "./component/CustomizedTextField";
+import { NormalTextField } from "./component/CustomizedTextField";
+import Container from "@material-ui/core/Container";
 
 const useStyles = makeStyles(theme => ({
   root: {
-    height: "100vh"
+    height: "100vh",
+    justifyContent: "center"
   },
   image: {
     backgroundImage: `url(${shitImage})`,
@@ -119,43 +117,47 @@ export default function Otp() {
   const classes = useStyles();
 
   return (
-    <Grid container component="main" className={classes.root}>
-      <CssBaseline />
-      <Grid style={{ marginTop: "15rem", padding: "2rem" }}>
-        <Typography className={classes.textBold}>
-          Vui lòng nhập số điện thoại
-        </Typography>
-        <Grid style={{ marginBottom: "1.4rem" }}>
-          <NormalTextField
-            variant="outlined"
-            placeholder="0909xxxxxx"
-            fullWidth={true}
-          />
-        </Grid>
-        <Grid style={{ marginBottom: "4rem" }}>
-          <Typography className={classes.textNormal}>
-            Nhấn tiếp theo để nhận được tin nhắn xác nhậm từ dịch vụ xác thực.
-            Xác thực số điện thoại.
+    <Container>
+      <Grid container component="main" className={classes.root}>
+        <CssBaseline />
+        <Grid style={{ marginTop: "15rem", padding: "2rem" }}>
+          <Typography className={classes.textBold}>
+            Vui lòng nhập số điện thoại
           </Typography>
-        </Grid>
-        <Grid className={classes.flex}>
-          <Button
-            style={{
-              display: "flex",
-              flex: 1,
-              backgroundColor: "#1877F2",
-              fontSize: "1rem",
-              color: "#FBFBFB",
-              marginTop: 19,
-              borderRadius: 15,
-              textTransform: "none",
-              height: "3.25rem",
-              marginLeft: 30,
-              marginRight: 30
-            }}
-          >Tiếp theo</Button>
+          <Grid style={{ marginBottom: "1.4rem" }}>
+            <NormalTextField
+              variant="outlined"
+              placeholder="0909xxxxxx"
+              fullWidth={true}
+            />
+          </Grid>
+          <Grid style={{ marginBottom: "4rem" }}>
+            <Typography className={classes.textNormal}>
+              Nhấn tiếp theo để nhận được tin nhắn xác nhậm từ dịch vụ xác thực.
+              Xác thực số điện thoại.
+            </Typography>
+          </Grid>
+          <Grid className={classes.flex}>
+            <Button
+              style={{
+                display: "flex",
+                flex: 1,
+                backgroundColor: "#1877F2",
+                fontSize: "1rem",
+                color: "#FBFBFB",
+                marginTop: 19,
+                borderRadius: 15,
+                textTransform: "none",
+                height: "3.25rem",
+                marginLeft: 30,
+                marginRight: 30
+              }}
+            >
+              Tiếp theo
+            </Button>
+          </Grid>
         </Grid>
       </Grid>
-    </Grid>
+    </Container>
   );
 }
