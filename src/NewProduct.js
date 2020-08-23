@@ -7,8 +7,8 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
-// import { useTheme } from "@material-ui/core/styles";
-// import useMediaQuery from "@material-ui/core/useMediaQuery";
+import { useTheme } from "@material-ui/core/styles";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
 import Divider from "@material-ui/core/Divider";
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
@@ -187,11 +187,36 @@ const useStyles = makeStyles(theme => ({
     justifyContent: "space-evenly",
     alignItems: "center"
   },
+  flexRowWeb: {
+    display: "flex",
+    flex: 1,
+    height: "7rem",
+    alignItems: "center"
+  },
   addButton: {
     width: "1.5rem",
     height: "1.5rem",
     backgroundColor: "#FFFFFF",
     color: "#1877F2"
+  },
+  boxImageWeb: {
+    width: "6.5rem",
+    height: "6.5rem",
+    borderRadius: 10,
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#F3F3F9",
+    marginRight: "2rem"
+  },
+  boxImageMobile: {
+    width: "6.5rem",
+    height: "6.5rem",
+    borderRadius: 10,
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#F3F3F9"
   }
 }));
 
@@ -221,14 +246,15 @@ const materialTheme = createMuiTheme({
 
 export default function NewProduct() {
   const classes = useStyles();
-  // const theme = useTheme();
-  // const notMobile = useMediaQuery(theme.breakpoints.up("sm"));
+  const theme = useTheme();
+  const notMobile = useMediaQuery(theme.breakpoints.up("sm"));
   // const spacing = notMobile ? 3 : 1;
   // const xsItem = notMobile ? 4 : 4;
   // const smItem = notMobile ? 3 : 6;
   // const mdItem = notMobile ? 3 : 6;
   // const itemMaxWidth = notMobile ? "none" : classes.itemPet;
   // const cardLayout = notMobile ? classes.cardweb : classes.card;
+  const boxImage = notMobile ? classes.boxImageWeb : classes.boxImageMobile;
 
   useEffect(() => {
     document.body.style.backgroundColor = "#FFFFFF";
@@ -345,20 +371,13 @@ export default function NewProduct() {
               </Typography>
               <Typography className={classes.textTileSpacing}>0/8</Typography>
             </Grid>
-            <Grid style={{}} className={`${classes.flexRow}`}>
+            <Grid
+              className={
+                notMobile ? `${classes.flexRowWeb}` : `${classes.flexRow}`
+              }
+            >
               {pics.map(pic => (
-                <Grid
-                  style={{
-                    width: "6.5rem",
-                    height: "6.5rem",
-                    borderRadius: 10,
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    backgroundColor: "#F3F3F9"
-                  }}
-                  key={pic.label}
-                >
+                <Grid style={{}} key={pic.label} className={boxImage}>
                   <Avatar
                     alt="+"
                     src="/broken-image.jpg"
@@ -367,7 +386,7 @@ export default function NewProduct() {
                 </Grid>
               ))}
             </Grid>
-            <Grid>
+            <Grid style={{ marginBottom: "2rem" }}>
               <Button
                 style={{
                   display: "flex",

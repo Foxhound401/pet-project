@@ -34,9 +34,7 @@ function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {"Copyright © "}
-      <Link color="inherit" href="https://material-ui.com/">
-        Your Website
-      </Link>{" "}
+      <Link color="inherit" href="https://material-ui.com/">Phuc Phung</Link>{" "}
       {new Date().getFullYear()}
       {"."}
     </Typography>
@@ -199,6 +197,14 @@ const useStyles = makeStyles(theme => ({
   header: {
     display: "flex",
     justifyContent: "space-between"
+  },
+  textBold: {
+    color: "#333333",
+    fontStyle: "normal",
+    lineHeight: "158.69%",
+    fontWeight: "bold",
+    letterSpacing: "0.002em",
+    fontSize: "1rem"
   },
   itemPet: {
     maxWidth: "20%"
@@ -375,16 +381,14 @@ export default function HomePage() {
       {/* Footer */}
       <footer className={classes.footer}>
         <Typography variant="h6" align="center" gutterBottom>
-          Footer
+          VNPAG
         </Typography>
         <Typography
           variant="subtitle1"
           align="center"
           color="textSecondary"
           component="p"
-        >
-          Something here to give the footer a purpose!
-        </Typography>
+        >Bản quyền tác giá</Typography>
         <Copyright />
       </footer>
       {/* End footer */}

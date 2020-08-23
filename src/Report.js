@@ -220,7 +220,7 @@ export default function ReportUser() {
                 rows={5}
               />
             </Grid>
-            <Grid>
+            <Grid style={{ marginBottom: "2rem" }}>
               <Button
                 className={classes.submitButton}
                 onClick={() => handleClickOpen()}
