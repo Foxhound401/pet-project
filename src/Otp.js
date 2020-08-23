@@ -120,7 +120,7 @@ export default function Otp() {
     <Container>
       <Grid container component="main" className={classes.root}>
         <CssBaseline />
-        <Grid style={{ marginTop: "15rem", padding: "2rem" }}>
+        <Grid style={{ marginTop: "10rem", padding: "2rem" }}>
           <Typography className={classes.textBold}>
             Vui lòng nhập số điện thoại
           </Typography>
