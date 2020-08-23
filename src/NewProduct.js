@@ -259,7 +259,7 @@ export default function NewProduct() {
               Đăng sản phẩm
             </Typography>
           </Grid>
-          <Grid>
+          <Grid style={{ transform: "translateY(5px)" }}>
             <VyBellIcon className={classes.icon} width={19} />
           </Grid>
         </Toolbar>

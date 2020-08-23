@@ -22,6 +22,7 @@ import Button from "@material-ui/core/Button";
 import Box from "@material-ui/core/Box";
 import GradeTwoToneIcon from "@material-ui/icons/GradeTwoTone";
 import Divider from "@material-ui/core/Divider";
+import { VyBellIcon, VyMenuIcon } from "./component/VyIcons";
 
 function PetImage(props) {
   return (
@@ -171,15 +172,20 @@ export default function ProductDetail() {
       <AppBar position="relative" className={classes.bar}>
         <Toolbar className={classes.header}>
           <Grid>
-            <MenuIcon className={classes.icon} />
+            <VyMenuIcon className={classes.icon} width={15} />
           </Grid>
           <Grid>
-            <Typography variant="h6" color="inherit" noWrap>
-              Chi tiết sản phẩm
+            <Typography
+              variant="h6"
+              color="inherit"
+              noWrap
+              className={`${classes.textBold}`}
+            >
+              Đăng sản phẩm
             </Typography>
           </Grid>
-          <Grid>
-            <NotificationIcon className={classes.icon} />
+          <Grid style={{ transform: "translateY(5px)" }}>
+            <VyBellIcon className={classes.icon} width={19} />
           </Grid>
         </Toolbar>
       </AppBar>

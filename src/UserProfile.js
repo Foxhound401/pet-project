@@ -28,6 +28,7 @@ import heroUser from "./images/heroUser.png";
 import TelegramIcon from "@material-ui/icons/Telegram";
 import Divider from "@material-ui/core/Divider";
 import { UserDialog } from "./component/CustomizeDialog";
+import { VyBellIcon, VyMenuIcon } from "./component/VyIcons";
 
 const useStyles = makeStyles(theme => ({
   icon: {
@@ -282,7 +283,7 @@ export default function UserProfile() {
       <AppBar position="relative" className={classes.bar}>
         <Toolbar className={classes.header}>
           <Grid>
-            <MenuIcon className={classes.icon} />
+            <VyMenuIcon className={classes.icon} width={15} />
           </Grid>
           <Grid>
             <Typography
@@ -291,11 +292,11 @@ export default function UserProfile() {
               noWrap
               className={`${classes.textBold}`}
             >
-              Morty Smith
+              Đăng sản phẩm
             </Typography>
           </Grid>
-          <Grid>
-            <NotificationIcon className={classes.icon} />
+          <Grid style={{ transform: "translateY(5px)" }}>
+            <VyBellIcon className={classes.icon} width={19} />
           </Grid>
         </Toolbar>
       </AppBar>

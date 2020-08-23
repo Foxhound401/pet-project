@@ -28,6 +28,7 @@ import turtle from "./images/turtle.jpg";
 import ohhwee from "./images/ohhwee.jpg";
 import bear from "./images/bear.jpg";
 import Divider from "@material-ui/core/Divider";
+import { VyBellIcon, VyMenuIcon } from "./component/VyIcons";
 
 function Copyright() {
   return (
@@ -263,15 +264,20 @@ export default function HomePage() {
       <AppBar position="relative" className={classes.bar}>
         <Toolbar className={classes.header}>
           <Grid>
-            <MenuIcon className={classes.icon} />
+            <VyMenuIcon className={classes.icon} width={15} />
           </Grid>
           <Grid>
-            <Typography variant="h6" color="inherit" noWrap>
-              Sàn đấu giá
+            <Typography
+              variant="h6"
+              color="inherit"
+              noWrap
+              className={`${classes.textBold}`}
+            >
+              Đăng sản phẩm
             </Typography>
           </Grid>
-          <Grid>
-            <NotificationIcon className={classes.icon} />
+          <Grid style={{ transform: "translateY(5px)" }}>
+            <VyBellIcon className={classes.icon} width={19} />
           </Grid>
         </Toolbar>
       </AppBar>
