@@ -17,9 +17,13 @@ jobs:
     - name: SSH and Deploy node app
       uses: appleboy/ssh-action@master
       with:
-        host: ${{ secrets.PET_AUCTION }}
-        username: ${{ secrets.SSH_KEY }}
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_USERNAME }}
         key: ${{ secrets.SSH_KEY }}
         port: ${{ secrets.SSH_PORT }}
-    - run: npm run build --if-present
-    - run: npm test
+        script: |
+          cd /var/www/html/pet-project
+          git pull origin master
+          npm install --production
+          npm run build --if-present
+          sudo systemctl reload nginx
