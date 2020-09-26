@@ -11,12 +11,13 @@ import Container from "@material-ui/core/Container";
 // import useMediaQuery from "@material-ui/core/useMediaQuery";
 import Divider from "@material-ui/core/Divider";
 import Avatar from "@material-ui/core/Avatar";
+import morty from "./images/morty.png";
 import Button from "@material-ui/core/Button";
 import { VyBellIcon, VyMenuIcon, VyCalendarIcon } from "./component/VyIcons";
 import {
   NormalTextField,
   AreaTextField,
-  SelectTextField
+  SelectTextField,
 } from "./component/CustomizedTextField";
 import MenuItem from "@material-ui/core/MenuItem";
 import { DateTimePicker, MuiPickersUtilsProvider } from "@material-ui/pickers";
@@ -28,52 +29,52 @@ import { ThemeProvider } from "@material-ui/styles";
 const steps = [
   {
     value: "20",
-    label: "20.000"
+    label: "20.000",
   },
   {
     value: "50",
-    label: "50.000"
+    label: "50.000",
   },
   {
     value: "100",
-    label: "100.000"
+    label: "100.000",
   },
   {
     value: "200",
-    label: "200.000"
+    label: "200.000",
   },
   {
     value: "500",
-    label: "500.000"
-  }
+    label: "500.000",
+  },
 ];
 
 const pics = [
   {
-    label: "something1"
+    label: "something1",
   },
   {
-    label: "something2"
+    label: "something2",
   },
   {
-    label: "something3"
-  }
+    label: "something3",
+  },
 ];
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   icon: {
     marginRight: theme.spacing(2),
-    fontSize: 20
+    fontSize: 20,
   },
   cardGrid: {
     padding: theme.spacing(3),
     paddingTop: theme.spacing(4),
-    paddingBottom: theme.spacing(4)
+    paddingBottom: theme.spacing(4),
   },
   cardImage: {
     padding: theme.spacing(0),
     paddingTop: theme.spacing(0),
-    paddingBottom: theme.spacing(4)
+    paddingBottom: theme.spacing(4),
   },
   card: {
     width: "100%",
@@ -85,16 +86,16 @@ const useStyles = makeStyles(theme => ({
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
     backgroundPosition: "center",
-    borderRadius: 10
+    borderRadius: 10,
   },
   bar: {
     color: "#000000",
     backgroundColor: "#ffffff",
-    boxShadow: "none"
+    boxShadow: "none",
   },
   header: {
     display: "flex",
-    justifyContent: "space-between"
+    justifyContent: "space-between",
   },
   dateRight: {
     fontSize: "0.9rem",
@@ -106,49 +107,47 @@ const useStyles = makeStyles(theme => ({
     textAlign: "center",
     borderRadius: 7,
     color: "#F2F2F2",
-    fontWeight: "600"
+    fontWeight: "600",
   },
   avatarLeft: {
     display: "flex",
     flex: 1,
-    justifyContent: "flex-end"
+    justifyContent: "flex-end",
   },
   username: {
     fontSize: "0.9rem",
     paddingLeft: "0.05rem",
     alignSelf: "center",
     fontWeight: "bold",
-    letterSpacing: "0.02em"
+    letterSpacing: "0.02em",
   },
   avatar: {
-    borderWidth: 5,
+    marginTop: "0.3rem",
+    borderWidth: "2px",
     borderStyle: "solid",
-    // borderColor: "rgba(255, 255, 255, 0.36)",
-    borderColor: "#FFFFFF",
-    width: "8rem",
-    height: "8rem",
-    // margin: "0.8rem",
-    marginLeft: "0",
-    transform: "translate(calc(50vw - 4rem), -75%)"
+    borderColor: "rgba(255, 255, 255, 0.36)",
+    width: "2.5rem",
+    height: "2.5rem",
+    marginRight: "1rem",
   },
   userContainer: {
     display: "flex",
-    flex: 1
+    flex: 1,
   },
   cardUserDateInfo: {
     display: "flex",
     flex: 1,
     padding: 0,
-    paddingTop: 11
+    paddingTop: 11,
   },
   carousel: {
-    height: "17rem"
+    height: "17rem",
   },
   petImage: {
-    height: "100%"
+    height: "100%",
   },
   priceSection: {
-    paddingTop: 28
+    paddingTop: 28,
   },
   textBold: {
     color: "#333333",
@@ -156,14 +155,14 @@ const useStyles = makeStyles(theme => ({
     lineHeight: "158.69%",
     fontWeight: "bold",
     letterSpacing: "0.002em",
-    fontSize: "1rem"
+    fontSize: "1rem",
   },
   textNormal: {
     fontSize: "1.125rem",
     lineHeight: "158.69%",
     textAlign: "center",
     letterSpacing: "0.02em",
-    color: "#333333"
+    color: "#333333",
   },
   textTileSpacing: {
     textTransform: "uppercase",
@@ -171,53 +170,63 @@ const useStyles = makeStyles(theme => ({
     fontSize: "0.875rem",
     lineHeight: "158.69%",
     letterSpacing: "0.05em",
-    color: "#828282"
+    color: "#828282",
   },
   flex: {
     display: "flex",
     flex: 1,
     justifyContent: "space-between",
     paddingTop: 20,
-    paddingBottom: 10
+    paddingBottom: 10,
   },
   flexRow: {
     display: "flex",
     flex: 1,
     height: "7rem",
     justifyContent: "space-evenly",
-    alignItems: "center"
+    alignItems: "center",
+  },
+  buttonActive: {
+    backgroundColor: "#D7E9FF!important",
+    fontSize: "0.9rem",
+    color: "#333333",
+    borderRadius: 15,
+    textTransform: "none",
+    height: "3.125rem",
+    fontWeight: "300",
+    paddingLeft: "1.25rem",
+    paddingRight: "1.25rem",
+  },
+  buttonNotActive: {
+    fontSize: "0.9rem",
+    borderRadius: 15,
+    textTransform: "none",
+    height: "3.125rem",
+    fontWeight: "300",
+    paddingLeft: "1.25rem",
+    paddingRight: "1.25rem",
+    backgroundColor: "#1877F2",
+    fontSize: "1rem",
+    color: "#FBFBFB",
   },
   addButton: {
     width: "1.5rem",
     height: "1.5rem",
     backgroundColor: "#FFFFFF",
-    color: "#1877F2"
-  }
+    color: "#1877F2",
+  },
+  receiver: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "flex-start"
+  },
+  sender: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "flex-end"
+
+  },
 }));
-
-const materialTheme = createMuiTheme({
-  overrides: {
-    MuiInputBase: {
-      root: {
-        backgroundColor: "#F3F3F9",
-        borderRadius: 10
-      },
-
-      input: {
-        fontWeight: "bold",
-        fontSize: "0.9rem",
-        letterSpacing: "0.02em",
-        lineHeight: "158.69%",
-        color: "#333333"
-      }
-    },
-    MuiOutlinedInput: {
-      notchedOutline: {
-        border: 0
-      }
-    }
-  }
-});
 
 export default function ChatClient() {
   const classes = useStyles();
@@ -234,13 +243,6 @@ export default function ChatClient() {
     document.body.style.backgroundColor = "#FFFFFF";
   }, []);
 
-  const handleChange = event => {
-    setStep(event.target.value);
-  };
-
-  const [step, setStep] = useState("20");
-  const [selectedDate, handleDateChange] = useState(new Date());
-
   return (
     <React.Fragment>
       <CssBaseline />
@@ -256,7 +258,7 @@ export default function ChatClient() {
               noWrap
               className={`${classes.textBold}`}
             >
-              Đăng sản phẩm
+              Jane Smith
             </Typography>
           </Grid>
           <Grid>
@@ -267,127 +269,26 @@ export default function ChatClient() {
       <Divider variant="middle" />
       <main>
         <Container style={{ marginTop: 10 }} maxWidth="md">
-          <form>
-            <Grid className={classes.flex}>
-              <Typography className={classes.textTileSpacing}>
-                Tên sản phẩm
-              </Typography>
-              <Typography className={classes.textTileSpacing}>15/30</Typography>
-            </Grid>
-            <Grid>
-              <NormalTextField
-                variant="outlined"
-                placeholder="something"
-                fullWidth={true}
-              />
-            </Grid>
-            <Grid className={`${classes.flex} `} style={{ marginTop: 10 }}>
-              <Typography className={classes.textTileSpacing}>
-                Thông tin sản phẩm
-              </Typography>
-              <Typography className={classes.textTileSpacing}>15/70</Typography>
-            </Grid>
-            <Grid>
-              <AreaTextField
-                variant="outlined"
-                placeholder="something"
-                multiline
-                fullWidth={true}
-                rows={5}
-              />
-            </Grid>
-            <Grid className={`${classes.flex} `} style={{ marginTop: 10 }}>
-              <Typography className={classes.textTileSpacing}>
-                Bước giá
-              </Typography>
-            </Grid>
-            <Grid>
-              <SelectTextField
-                variant="outlined"
-                value={step}
-                fullWidth={true}
-                placeholder="something"
-                onChange={handleChange}
-                select
-              >
-                {steps.map(option => (
-                  <MenuItem key={option.value} value={option.value}>
-                    {option.label}
-                  </MenuItem>
-                ))}
-              </SelectTextField>
-            </Grid>
-            <Grid className={`${classes.flex} `} style={{ marginTop: 10 }}>
-              <Typography className={classes.textTileSpacing}>
-                Thời gian kết thúc
-              </Typography>
-            </Grid>
-            <Grid>
-              <MuiPickersUtilsProvider utils={DateFnsUtils} locale={vi}>
-                <ThemeProvider theme={materialTheme}>
-                  <DateTimePicker
-                    value={selectedDate}
-                    fullWidth={true}
-                    onChange={handleDateChange}
-                    inputVariant="outlined"
-                    minutesStep={5}
-                    disablePast
-                    InputProps={{
-                      endAdornment: <VyCalendarIcon />
-                    }}
-                  />
-                </ThemeProvider>
-              </MuiPickersUtilsProvider>
-            </Grid>
-            <Grid className={`${classes.flex} `} style={{ marginTop: 10 }}>
-              <Typography className={classes.textTileSpacing}>
-                Hình ảnh
-              </Typography>
-              <Typography className={classes.textTileSpacing}>0/8</Typography>
-            </Grid>
-            <Grid style={{}} className={`${classes.flexRow}`}>
-              {pics.map(pic => (
-                <Grid
-                  style={{
-                    width: "6.5rem",
-                    height: "6.5rem",
-                    borderRadius: 10,
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    backgroundColor: "#F3F3F9"
-                  }}
-                >
-                  <Avatar
-                    alt="+"
-                    src="/broken-image.jpg"
-                    className={classes.addButton}
-                  />
-                </Grid>
-              ))}
-            </Grid>
-            <Grid>
-              <Button
-                style={{
-                  display: "flex",
-                  flex: 1,
-                  backgroundColor: "#1877F2",
-                  fontSize: "1rem",
-                  color: "#FBFBFB",
-                  width: "100%",
-                  marginTop: 19,
-                  borderRadius: 15,
-                  textTransform: "none",
-                  height: "3.25rem"
-                }}
-              >
-                Đăng sản phẩm ngay
-              </Button>
-            </Grid>
-          </form>
+
+          <Grid className={classes.receiver}>
+            <Avatar alt="Person" src={morty} className={classes.avatar} />
+            <Button className={classes.buttonActive}>Chào bạn</Button>
+          </Grid>
+
+          <Grid className={classes.sender}>
+            <Button className={classes.buttonNotActive}>Xin chào</Button>
+          </Grid>
+
+          <Grid className={classes.receiver}>
+            <Avatar alt="Person" src={morty} className={classes.avatar} />
+            <Button className={classes.buttonActive}>Chào bạn</Button>
+          </Grid>
+
+          <Grid className={classes.sender}>
+            <Button className={classes.buttonNotActive}>Xin chào</Button>
+          </Grid>
         </Container>
       </main>
     </React.Fragment>
   );
 }
-

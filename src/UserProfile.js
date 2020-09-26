@@ -113,6 +113,17 @@ const useStyles = makeStyles(theme => ({
     marginLeft: "0",
     transform: "translate(calc(50vw - 4rem), -75%)"
   },
+  avatarWeb: {
+    borderWidth: 5,
+    borderStyle: "solid",
+    // borderColor: "rgba(255, 255, 255, 0.36)",
+    borderColor: "#FFFFFF",
+    width: "8rem",
+    height: "8rem",
+    // margin: "0.8rem",
+    marginLeft: "0",
+    transform: "translate(calc(100% + 18rem), -75%)"
+  },
   userContainer: {
     display: "flex",
     flex: 1
@@ -258,7 +269,7 @@ export default function UserProfile() {
   const classes = useStyles();
   const theme = useTheme();
   const notMobile = useMediaQuery(theme.breakpoints.up("sm"));
-  // const spacing = notMobile ? 3 : 1;
+
   const xsItem = notMobile ? 4 : 4;
   const smItem = notMobile ? 3 : 6;
   const mdItem = notMobile ? 3 : 6;
@@ -308,7 +319,7 @@ export default function UserProfile() {
               container
               className={`${classes.heroSection} ${classes.backgroundImage}`}
             ></Grid>
-            <Avatar alt="Remy Sharp" src={morty} className={classes.avatar} />
+            <Avatar alt="Morty Smith" src={morty} className={notMobile ? classes.avatarWeb : classes.avatar} />
           </Grid>
         </Container>
         <Container className={classes.cardGrid} maxWidth="md">
@@ -342,7 +353,6 @@ export default function UserProfile() {
               onClose={handleClose}
             />
           </Grid>
-        </Container>
         <Container className={classes.cardGrid}>
           <Typography
             style={{
@@ -358,7 +368,7 @@ export default function UserProfile() {
             Sản phẩm đã đấu giá
           </Typography>
 
-          <Grid container spacing={1} style={{ marginTop: 15 }}>
+          <Grid container spacing={2} style={{ marginTop: 15 }}>
             {products.map((card, index) => (
               <Grid
                 item
@@ -412,6 +422,7 @@ export default function UserProfile() {
               </Grid>
             ))}
           </Grid>
+        </Container>
         </Container>
       </main>
     </React.Fragment>
