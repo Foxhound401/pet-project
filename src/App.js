@@ -15,13 +15,14 @@ function App() {
       <div>
         <Switch>
           <Route path="/login" component={Login} />
+          <Route path="/home" component={HomePage} />
           <Route path="/otp" component={Otp} />
           <Route path="/users/chat" component={ChatClient} />
           <Route path="/users/report" component={ReportUser} />
           <Route path="/users" component={UserProfile} />
           <Route path="/pets/id" component={NewProduct} />
           <Route path="/pets" component={ProductDetail} />
-          <Route path="/" component={HomePage} />
+          <Route path="/" component={Login} />
         </Switch>
       </div>
     </Router>
