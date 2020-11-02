@@ -229,6 +229,7 @@ export default function Login() {
               variant="contained"
               color="primary"
               className={classes.submit}
+              href="https://api/vnpag.net/auth/facebook"
               size="large"
             >
               Đăng nhập bằng Facebook
